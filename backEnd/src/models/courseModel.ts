@@ -27,3 +27,12 @@ const courseSchema: Schema = new Schema({
 });
 
 export const courseModel = mongoose.model<Icourse>("courses", courseSchema);
+
+// const addCourse = new courseModel({
+//   title: "React.js Masterclass",
+//   description:
+//     "Build modern, interactive web applications with React.js and understand component-based architecture.",
+//   teacher: "Emma Davis",
+//   price: 79.99,
+// });
+// addCourse.save();
