@@ -1,6 +1,3 @@
-import React from "react";
-import { getCourses } from "../services/services";
-
 function AllCoursesCard({ title, description, teacher, price }) {
   return (
     <div className="card" style={{ width: "18rem" }}>
