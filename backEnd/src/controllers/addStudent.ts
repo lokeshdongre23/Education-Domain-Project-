@@ -23,3 +23,5 @@ const addStudent = async (req: Request, res: Response) => {
     });
   }
 };
+
+export default addStudent;
