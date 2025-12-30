@@ -14,8 +14,13 @@ const addStudent = async (req: Request, res: Response) => {
     console.log("Student added");
     res.status(200).json({
       message: "Student created Sucessfully..",
-      response: res.send(addedStudent),
+      student: {
+        _id: (await addedStudent)._id,
+        sName: (await addedStudent).sName,
+        grade: (await addedStudent).grade,
+      },
     });
+    // res.send(addedStudent);
   } catch (error) {
     console.log("error:", error);
     res.status(400).json({

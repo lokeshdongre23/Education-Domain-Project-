@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/students", router); //getStudent Router
+app.use("/students", router); //add student
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
