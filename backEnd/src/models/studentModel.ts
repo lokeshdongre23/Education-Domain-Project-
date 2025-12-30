@@ -18,3 +18,10 @@ const studentSchema: Schema = new Schema({
 const studentModel = mongoose.model<Istudent>("students", studentSchema);
 
 export default studentModel;
+
+// const student = new studentModel({
+//   sName: "lokesh",
+//   grade: 10,
+// });
+
+// student.save();
