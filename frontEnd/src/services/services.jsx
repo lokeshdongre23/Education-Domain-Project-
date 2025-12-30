@@ -7,3 +7,6 @@ const connection = axios.create({
 export const getCourses = async () => {
   return await connection.get("/courses");
 };
+export const getStudents = async () => {
+  return await connection.get("/students");
+};
