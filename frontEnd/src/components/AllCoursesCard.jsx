@@ -1,3 +1,4 @@
+import "./AlllCourses.css";
 function AllCoursesCard({ title, description, teacher, price }) {
   return (
     <div className="card" style={{ width: "18rem" }}>

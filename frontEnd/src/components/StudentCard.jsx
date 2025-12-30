@@ -1,5 +1,3 @@
-import React from "react";
-
 function StudentCard({ sName, grade }) {
   return (
     <div>

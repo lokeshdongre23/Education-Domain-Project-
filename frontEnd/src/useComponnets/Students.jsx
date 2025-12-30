@@ -14,7 +14,7 @@ function Students() {
     getStudentdata();
   }, []);
   return (
-    <div>
+    <div style={{ display: "flex", gap: "12px" }}>
       {student.map((elem, idex) => (
         <div key={idex}>
           <StudentCard sName={elem.sName} grade={elem.grade} />
