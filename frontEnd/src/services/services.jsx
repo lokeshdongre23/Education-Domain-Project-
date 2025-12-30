@@ -10,3 +10,6 @@ export const getCourses = async () => {
 export const getStudents = async () => {
   return await connection.get("/students");
 };
+export const setStudent = async (formData) => {
+  return await connection.post("/students", formData);
+};

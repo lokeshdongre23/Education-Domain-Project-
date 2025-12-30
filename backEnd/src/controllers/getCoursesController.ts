@@ -11,6 +11,7 @@ const getCourses = async (req: Request, res: Response) => {
     }
 
     res.status(200).json(allCourses);
+    //  use mapp to send respond here
   } catch (error) {
     console.error("Error fetching courses:", error);
     res.status(500).json({
