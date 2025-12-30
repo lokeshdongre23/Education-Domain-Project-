@@ -60,12 +60,12 @@
   width: 60%;
 }
 
-.nav-link.active {
+.nav-item.active .nav-link {
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff !important;
 }
 
-.nav-link.active::after {
+.nav-item.active .nav-link::after {
   width: 60%;
 }
 
