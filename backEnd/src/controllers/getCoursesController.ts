@@ -10,15 +10,7 @@ const getCourses = async (req: Request, res: Response) => {
       });
     }
 
-    res.status(200).json({
-      message: "All Courses are below",
-      Courses: allCourses.map((course) => ({
-        title: course.title,
-        description: course.description,
-        teacher: course.teacher,
-        price: course.price,
-      })),
-    });
+    res.status(200).json(allCourses);
   } catch (error) {
     console.error("Error fetching courses:", error);
     res.status(500).json({
