@@ -2,8 +2,8 @@ import { Router } from "express";
 import getStudents from "../controllers/getStudentController";
 import addStudent from "../controllers/addStudent";
 
-const router = Router();
+const studentRouter = Router();
 
-router.get("/", getStudents);
-router.post("/", addStudent);
-export default router;
+studentRouter.get("/", getStudents);
+studentRouter.post("/", addStudent);
+export default studentRouter;
