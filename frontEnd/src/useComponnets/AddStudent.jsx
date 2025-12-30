@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { setStudent } from "../services/services";
 import "./AddStudent.css";
 
-const AddStudent = ({ onUserAdded }) => {
+const AddStudent = () => {
   const [formData, setFormData] = useState({
     sName: "",
     grade: "",
@@ -30,9 +30,9 @@ const AddStudent = ({ onUserAdded }) => {
         grade: "",
       });
 
-      if (onUserAdded) {
-        onUserAdded();
-      }
+      //   if (onUserAdded) {
+      //     onUserAdded();
+      //   }
     } catch (error) {
       console.error("Error creating student:", error);
       alert("Failed to create student");

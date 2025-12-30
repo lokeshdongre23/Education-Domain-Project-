@@ -17,7 +17,7 @@ function Students() {
 
   return (
     <>
-      <AddStudent onUserAdded={getStudentdata} />
+      {/* <AddStudent onUserAdded={getStudentdata} /> */}
       <div
         style={{
           display: "flex",
