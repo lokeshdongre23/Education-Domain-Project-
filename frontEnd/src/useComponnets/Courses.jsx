@@ -19,7 +19,7 @@ function Courses() {
   //     console.log(courses);
   //   }, [courses]);
   return (
-    <div style={{ display: "flex", gap: "12px" }}>
+    <div style={{ display: "flex", gap: "12px", marginTop: "12px" }}>
       {courses.map((cours, index) => (
         <div key={index}>
           <AllCoursesCard
