@@ -3,10 +3,12 @@ import dotenv from "dotenv";
 import dbConnection from "./config/db";
 import studentRouter from "./routes/studentRouter";
 import courseRouter from "./routes/coursesRouter";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors());
 dbConnection();
 app.use(express.json());
 // this function is use to connect he dataBase

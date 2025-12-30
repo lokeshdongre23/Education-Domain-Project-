@@ -1,7 +1,9 @@
+import AllCoursesCard from "./components/AllCoursesCard";
+
 function App() {
   return (
     <>
-      <div>hello </div>
+      <AllCoursesCard />
     </>
   );
 }
