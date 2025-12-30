@@ -22,7 +22,7 @@ function NavBar() {
           <ul className="navbar-nav">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
-                Home <span className="sr-only">(current)</span>
+                Home
               </Link>
             </li>
             <li className="nav-item">
