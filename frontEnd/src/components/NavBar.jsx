@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 function NavBar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/">
           Education Domain Project
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,20 +21,35 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/add-student">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/add-student"
+              >
                 Add Students
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/students">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/students"
+              >
                 Students
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
