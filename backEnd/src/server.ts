@@ -1,7 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import dbConnection from "./config/db";
-import router from "./routes/studentRouter";
+import studentRouter from "./routes/studentRouter";
+import courseRouter from "./routes/coursesRouter";
 dotenv.config();
 
 const app = express();
@@ -15,8 +16,9 @@ app.get("/", (req, res) => {
   res.send("Welcome to TypeScript Express Starter!");
 });
 
-app.use("/students", router); //getStudent Router
-app.use("/students", router); //add student
+app.use("/students", studentRouter); //getStudent Router
+app.use("/students", studentRouter); //add student
+app.use("/courses", courseRouter); //get  course
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

@@ -1,0 +1,25 @@
+import { Request, Response } from "express";
+import { courseModel } from "../models/courseModel";
+
+const getCourses = async (req: Request, res: Response) => {
+  try {
+    const allCourses = await courseModel.find({});
+    if (allCourses.length === 0) {
+      res.status(404).json({
+        message: "no Course Found..",
+      });
+
+      res.status(200).json({
+        message: "All Courses are below",
+        Courses: allCourses.map((course) => ({
+          title: course.title,
+          description: course.description,
+          teacher: course.teacher,
+          price: course.price,
+        })),
+      });
+    }
+  } catch (error) {}
+};
+
+export default getCourses;
