@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getStudents } from "../services/services";
 import StudentCard from "../components/studentCard";
+import AddStudent from "./AddStudent";
 
 function Students() {
   const [student, setStudent] = useState([]);
@@ -13,14 +14,25 @@ function Students() {
   useEffect(() => {
     getStudentdata();
   }, []);
+
   return (
-    <div>
-      {student.map((elem, idex) => (
-        <div key={idex}>
-          <StudentCard sName={elem.sName} grade={elem.grade} />
-        </div>
-      ))}
-    </div>
+    <>
+      <AddStudent onUserAdded={getStudentdata} />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "12px",
+          padding: "1rem",
+        }}
+      >
+        {student.map((elem, idex) => (
+          <div key={idex}>
+            <StudentCard sName={elem.sName} grade={elem.grade} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 

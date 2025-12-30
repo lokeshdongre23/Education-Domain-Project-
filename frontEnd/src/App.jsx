@@ -1,4 +1,5 @@
 // import AllCoursesCard from "./components/AllCoursesCard";
+import AddStudent from "./useComponnets/AddStudent";
 import Courses from "./useComponnets/Courses";
 import Students from "./useComponnets/Students";
 
