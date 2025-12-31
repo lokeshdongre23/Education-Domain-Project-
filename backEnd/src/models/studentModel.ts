@@ -13,6 +13,7 @@ const studentSchema: Schema = new Schema({
     type: Number,
     required: true,
   },
+  // crete
 });
 
 const studentModel = mongoose.model<Istudent>("students", studentSchema);
