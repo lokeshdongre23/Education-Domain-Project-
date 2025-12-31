@@ -1,7 +1,9 @@
-import mongoose, { Document, Schema } from "mongoose";
+import mongoose, { Document, Schema, Types } from "mongoose";
+
 interface Istudent extends Document {
   sName: String;
   grade: Number;
+  createdBy: Types.ObjectId;
 }
 
 const studentSchema: Schema = new Schema({
@@ -13,7 +15,11 @@ const studentSchema: Schema = new Schema({
     type: Number,
     required: true,
   },
-  // crete
+  creteatedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
+    required: true,
+  },
 });
 
 const studentModel = mongoose.model<Istudent>("students", studentSchema);

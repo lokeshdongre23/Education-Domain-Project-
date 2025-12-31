@@ -22,7 +22,7 @@ const authenticateUSerOnly = (
 
   //   console.log("user data:", user);
 
-  //   req.user = user;
+  req.user = user; //from here the user object is send to the next router
   next();
 };
 

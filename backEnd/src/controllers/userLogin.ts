@@ -19,8 +19,13 @@ const userLogin = async (req: Request, res: Response) => {
     authService.setUser(sessionId, user); // here we are going to store the uuid inside the map()
     console.log(sessionId);
     res.cookie("uid", sessionId);
+
     console.log(`${user.uName} has being loggedIN`);
-    return res.send("you are logged in");
+    // return res.send("you are logged in");
+    return res.json({
+      message: `${user.uName} welcome`,
+      cookie: `uid=${sessionId}`,
+    });
   } catch (error) {
     console.log("Error: ", error);
     res.status(404).json({

@@ -23,10 +23,12 @@ app.get("/", (req, res) => {
   res.send("Welcome to TypeScript Express Starter!");
 });
 
-app.use("/students", authenticateUSerOnly, studentRouter); //add student and get students
-app.use("/courses", courseRouter); //get  course
+app.use("/courses", courseRouter); //get  course every one is able to see this whata re the courses
 app.use("/signup", signupRouter); // router is help to sign in user
 app.use("/login", loginRouter); // this is use to login user with email and pass word
+app.use(authenticateUSerOnly); // only the loged in user can add or see the students
+app.use("/students", studentRouter); //add student and get students
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
