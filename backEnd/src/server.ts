@@ -4,6 +4,8 @@ import dbConnection from "./config/db";
 import studentRouter from "./routes/studentRouter";
 import courseRouter from "./routes/coursesRouter";
 import cors from "cors";
+import signupRouter from "./routes/signupRouter";
+import loginRouter from "./routes/loginRouter";
 dotenv.config();
 
 const app = express();
@@ -21,7 +23,8 @@ app.get("/", (req, res) => {
 app.use("/students", studentRouter); //getStudent Router
 app.use("/students", studentRouter); //add student
 app.use("/courses", courseRouter); //get  course
-
+app.use("/signup", signupRouter); // router is help to sign in user
+app.use("/login", loginRouter);
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
