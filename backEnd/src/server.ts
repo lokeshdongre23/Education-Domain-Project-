@@ -28,6 +28,7 @@ app.use("/signup", signupRouter); // router is help to sign in user
 app.use("/login", loginRouter); // this is use to login user with email and pass word
 app.use(authenticateUSerOnly); // only the loged in user can add or see the students
 app.use("/students", studentRouter); //add student and get students
+app.use("/courses", courseRouter); // this end point will help to add new course to theloged in user
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

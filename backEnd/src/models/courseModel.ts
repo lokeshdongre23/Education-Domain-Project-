@@ -7,7 +7,7 @@ interface Icourse extends Document {
   price: Number;
 }
 
-const courseSchema: Schema = new Schema({
+const courseSchema: Schema = new Schema<Icourse>({
   title: {
     type: String,
     required: true,
