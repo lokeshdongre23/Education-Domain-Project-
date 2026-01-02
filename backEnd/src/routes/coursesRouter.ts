@@ -1,7 +1,7 @@
 import { Router } from "express";
 import getCourses from "../controllers/getCoursesController";
 import addCourses from "../controllers/addCours";
-import authenticateUSerOnly from "../middlewares/authMiddleware";
+import { authenticateUSerOnly } from "../middlewares/authMiddleware";
 
 const courseRouter = Router();
 

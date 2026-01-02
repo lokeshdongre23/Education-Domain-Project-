@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import authService from "../services/authService";
 import { IUser } from "../types/express";
 
-const authenticateUSerOnly = (
+export const authenticateUSerOnly = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -30,4 +30,18 @@ const authenticateUSerOnly = (
   next();
 };
 
-export default authenticateUSerOnly;
+// this will checl the authorization of the user
+export const restrictedToRole = (roles: Array<string>) => {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    const user = req.body.role;
+    if (!user) {
+      return res.status(404).send("Please Login..");
+    }
+    if (!roles.includes(user)) {
+      return res.status(402).send("unAuthorized User....");
+    }
+    return next();
+  };
+};
+
+// export default { authenticateUSerOnly, restrictedToRole };

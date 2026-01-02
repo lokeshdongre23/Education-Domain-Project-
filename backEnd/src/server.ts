@@ -7,7 +7,7 @@ import cors from "cors";
 import signupRouter from "./routes/signupRouter";
 import loginRouter from "./routes/loginRouter";
 import cookieParser from "cookie-parser";
-import authenticateUSerOnly from "./middlewares/authMiddleware";
+import { authenticateUSerOnly } from "./middlewares/authMiddleware";
 dotenv.config();
 
 const app = express();

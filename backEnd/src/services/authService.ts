@@ -20,6 +20,7 @@ const setUser = (user: any) => {
       email: user.email,
       cNo: user.cNo,
       profession: user.profession,
+      role: user.role,
     },
     secret
   );
