@@ -11,6 +11,7 @@ const secret = "Lokesh123";
 // sessionIdUserMap.set(id, user);
 //   console.log("user from service", user);
 // };
+// create of the jwt token
 
 const setUser = (user: any) => {
   return jwt.sign(
@@ -27,7 +28,7 @@ const setUser = (user: any) => {
 // const getUser = (id: any) => {
 //   // return sessionIdUserMap.get(id);
 // };
-
+// this is use to veryfy the jwt secrate
 const getUser = (token: any) => {
   return jwt.verify(token, secret);
 };

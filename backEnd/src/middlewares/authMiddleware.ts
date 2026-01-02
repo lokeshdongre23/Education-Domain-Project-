@@ -7,13 +7,16 @@ const authenticateUSerOnly = (
   res: Response,
   next: NextFunction
 ) => {
-  const userUid = req.cookies?.uid;
+  // const userUid = req.cookies?.uid;
+  const userUid = req.headers["authorization"];
+  const token = userUid?.split("Bearer ")[1]; // this will get the jwt secrate from the header afere bearer part the only jwt tooken
+  // console.log(token);
   if (!userUid) {
     return res.status(404).json({
       message: "you are not Login, Please Login",
     });
   }
-  const user = authService.getUser(userUid) as IUser;
+  const user = authService.getUser(token) as IUser;
 
   if (!user) {
     return res.status(404).json({
@@ -21,7 +24,7 @@ const authenticateUSerOnly = (
     });
   }
 
-  //   console.log("user data:", user);
+  // console.log("user data:", user);
 
   req.user = user as IUser; //from here the user object is send to the next router
   next();
