@@ -37,10 +37,3 @@ const userLogin = async (req: Request, res: Response) => {
 };
 
 export default userLogin;
-
-/**
- *
- * getUser(id){
- * sessionidusermap.get(id)
- * }
- */

@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import authService from "../services/authService";
 import { IUser } from "../types/express";
+import { JwtPayload } from "jsonwebtoken";
 
 export const authenticateUSerOnly = (
   req: Request,

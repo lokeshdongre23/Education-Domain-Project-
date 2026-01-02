@@ -8,7 +8,6 @@ import signupRouter from "./routes/signupRouter";
 import loginRouter from "./routes/loginRouter";
 import cookieParser from "cookie-parser";
 import { authenticateUSerOnly } from "./middlewares/authMiddleware";
-import viewUsers from "./controllers/allUsers";
 import getUsersRouter from "./routes/viewUsers";
 dotenv.config();
 

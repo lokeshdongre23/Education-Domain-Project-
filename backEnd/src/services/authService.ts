@@ -22,7 +22,8 @@ const setUser = (user: any) => {
       profession: user.profession,
       role: user.role,
     },
-    secret
+    secret,
+    { expiresIn: "1h" }
   );
 };
 
