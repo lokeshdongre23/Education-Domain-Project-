@@ -8,6 +8,8 @@ import signupRouter from "./routes/signupRouter";
 import loginRouter from "./routes/loginRouter";
 import cookieParser from "cookie-parser";
 import { authenticateUSerOnly } from "./middlewares/authMiddleware";
+import viewUsers from "./controllers/allUsers";
+import getUsersRouter from "./routes/viewUsers";
 dotenv.config();
 
 const app = express();
@@ -27,6 +29,7 @@ app.use("/courses", viewCourse); //get  course every one is able to see this wha
 app.use("/signup", signupRouter); // router is help to sign in user
 app.use("/login", loginRouter); // this is use to login user with email and pass word
 app.use(authenticateUSerOnly); // only the loged in user can add or see the students
+app.use("/users", getUsersRouter); /// Admin is able to see the users
 app.use("/students", studentRouter); //add student and get students
 app.use("/courses", addCourse); // this end point will help to add new course to theloged in user
 

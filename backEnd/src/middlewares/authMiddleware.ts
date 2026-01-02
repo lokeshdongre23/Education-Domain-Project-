@@ -33,12 +33,19 @@ export const authenticateUSerOnly = (
 // this will checl the authorization of the user
 export const restrictedToRole = (roles: Array<string>) => {
   return async (req: Request, res: Response, next: NextFunction) => {
-    const user = req.body.role;
+    const user = req.user?.role;
+
+    // console.log(roles);
+
+    console.log(user);
+
     if (!user) {
       return res.status(404).send("Please Login..");
     }
     if (!roles.includes(user)) {
-      return res.status(402).send("unAuthorized User....");
+      return res
+        .status(401)
+        .send("unAuthorized User , only admin can add Course.......");
     }
     return next();
   };

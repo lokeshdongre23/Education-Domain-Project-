@@ -4,6 +4,7 @@
  */
 
 import { Document } from "mongoose";
+import { userRole } from "../models/userModel";
 
 interface IUser extends Document {
   _id: string;
@@ -12,6 +13,7 @@ interface IUser extends Document {
   cNo: number;
   profession?: string;
   password: string;
+  role: userRole;
 }
 
 declare global {
