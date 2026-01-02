@@ -15,16 +15,17 @@ const userLogin = async (req: Request, res: Response) => {
     if (!user) {
       return res.send("no user Found......");
     }
-    const sessionId = uuidv4(); // heere we are creatin the session id
-    authService.setUser(sessionId, user); // here we are going to store the uuid inside the map()
-    console.log(sessionId);
-    res.cookie("uid", sessionId);
+    // const sessionId = uuidv4(); // heere we are creatin the session id
+    const token = authService.setUser(user); // here we are going to store the uuid inside the map()
+    console.log(token);
+    // res.cookie("uid", sessionId);
+    res.cookie("uid", token);
 
     console.log(`${user.uName} has being loggedIN`);
     // return res.send("you are logged in");
     return res.json({
       message: `${user.uName} welcome`,
-      cookie: `uid=${sessionId}`,
+      cookie: `${token}`,
     });
   } catch (error) {
     console.log("Error: ", error);

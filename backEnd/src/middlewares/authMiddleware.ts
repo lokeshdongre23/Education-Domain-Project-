@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import authService from "../services/authService";
+import { IUser } from "../types/express";
 
 const authenticateUSerOnly = (
   req: Request,
@@ -12,7 +13,7 @@ const authenticateUSerOnly = (
       message: "you are not Login, Please Login",
     });
   }
-  const user = authService.getUser(userUid);
+  const user = authService.getUser(userUid) as IUser;
 
   if (!user) {
     return res.status(404).json({
@@ -22,7 +23,7 @@ const authenticateUSerOnly = (
 
   //   console.log("user data:", user);
 
-  req.user = user; //from here the user object is send to the next router
+  req.user = user as IUser; //from here the user object is send to the next router
   next();
 };
 
