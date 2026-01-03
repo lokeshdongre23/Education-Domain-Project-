@@ -51,6 +51,27 @@ function NavBar() {
                 Students
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/signUp"
+              >
+                Sign up
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/login"
+              >
+                Login
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>

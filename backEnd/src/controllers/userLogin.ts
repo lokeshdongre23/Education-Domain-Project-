@@ -8,12 +8,20 @@ import authService from "../services/authService";
 
 const userLogin = async (req: Request, res: Response) => {
   try {
+    if (!req.body.email || !req.body.password) {
+      return res
+        .status(400)
+        .json({ message: `Please Insert Email Paasssword` });
+    }
+
     const { email, password } = req.body;
     const user = await userModel.findOne({ email, password });
     // console.log("user from controller", user);
 
     if (!user) {
-      return res.send("no user Found......");
+      return res.status(404).json({
+        message: "NO user Found, Check Credential",
+      });
     }
     // const sessionId = uuidv4(); // heere we are creatin the session id
     const token = authService.setUser(user); // here we are going to store the uuid inside the map()
@@ -25,7 +33,7 @@ const userLogin = async (req: Request, res: Response) => {
     console.log(`${user.uName} has being loggedIN`);
     // return res.send("you are logged in");
     return res.json({
-      message: `${user.uName} welcome`,
+      message: `${user.uName}`,
       cookie: `${token}`,
     });
   } catch (error) {

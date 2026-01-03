@@ -34,8 +34,9 @@ const AddStudent = () => {
       //     onUserAdded();
       //   }
     } catch (error) {
-      console.error("Error creating student:", error);
-      alert("Failed to create student");
+      // console.error("Error creating student:", error);
+      console.log(error);
+      // alert("Failed to create student");
     } finally {
       setIsSubmitting(false);
     }
