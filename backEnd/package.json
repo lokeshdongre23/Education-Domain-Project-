@@ -22,10 +22,15 @@
   },
   "homepage": "https://github.com/lokeshdongre23/express-starter-folders#readme",
   "dependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/jsonwebtoken": "^9.0.10",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "mongoose": "^9.1.0"
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.0",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
