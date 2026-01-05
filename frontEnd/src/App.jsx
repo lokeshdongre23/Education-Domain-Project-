@@ -6,6 +6,7 @@ import Students from "./useComponnets/Students";
 import NavBar from "./components/NavBar";
 import SignUppage from "./useComponnets/SignUppage";
 import UserLogin from "./useComponnets/UserLogin";
+import Logout from "./useComponnets/Logout";
 
 function App() {
   // return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/add-student" element={<AddStudent />} />
         <Route path="/signUp" element={<SignUppage />} />
         <Route path="/login" element={<UserLogin />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </>
   );

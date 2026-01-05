@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { userLogin } from "../services/services";
 import Swal from "sweetalert2";
 import { redirect, useNavigate } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
 function UserLogin() {
+  // const { setLogedIn } = useContext(AuthContext);
+  const { login, claims } = useAuth();
   const navigate = useNavigate();
   const [credential, setCredentail] = useState({
     email: "",
@@ -25,8 +27,9 @@ function UserLogin() {
       const res = await userLogin(credential);
       // localStorage.setItem("token", res.data.cookie); // storing the token inside the local storage of the browser
       // console.log(store);
-
-      console.log(res.data);
+      // setLogedIn(true); // the value is set true fromthe Authcontext
+      login(res.data.cookie);
+      // console.log(res.data);
       // console.log("submitted");
       await Swal.fire({
         title: `Welcome ${res.data.message}`,
