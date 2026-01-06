@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getStudents } from "../services/services";
-import StudentCard from "../components/studentCard.jsx";
+import StudentCard from "../components/StudentCard.jsx";
 import AddStudent from "./AddStudent";
 
 function Students() {
