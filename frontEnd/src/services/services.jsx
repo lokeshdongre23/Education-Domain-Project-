@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const URI = import.meta.env.VITE_BASE_URI;
 const connection = axios.create({
-  baseURL: "http://localhost:5000",
+  // baseURL: "http://localhost:5000",
+  baseURL: URI,
 });
 
 // Automatically attach token
