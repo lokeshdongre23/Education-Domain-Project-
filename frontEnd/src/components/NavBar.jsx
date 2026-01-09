@@ -7,8 +7,9 @@ import { useAuth } from "../context/AuthContext";
 function NavBar() {
   // const { logedIn } = useContext(AuthContext);
   const { claims } = useAuth();
-  console.log(claims);
+  // console.log(claims);
 
+  const isAdmin = claims?.role === "ADMIN";
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -114,6 +115,20 @@ function NavBar() {
                   to="/logout"
                 >
                   Logout
+                  {/* </button> */}
+                </NavLink>
+              </li>
+            )}
+
+            {isAdmin && (
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/allusers"
+                >
+                  All Users
                   {/* </button> */}
                 </NavLink>
               </li>
